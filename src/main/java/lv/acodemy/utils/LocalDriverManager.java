@@ -44,7 +44,7 @@ public class LocalDriverManager {
         Map<String, Object> sauceOptions = new HashMap<>();
         sauceOptions.put("username", "");
         sauceOptions.put("accessKey", "");
-        sauceOptions.put("build", "selenium-build-63P9R");
+        sauceOptions.put("build", "<your build id>");
         sauceOptions.put("name", "<your test name>");
         browserOptions.setCapability("sauce:options", sauceOptions);
 

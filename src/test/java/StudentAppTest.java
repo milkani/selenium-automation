@@ -36,7 +36,7 @@ public class StudentAppTest {
         notifications = new Notifications(wait);
     }
 
-    @Test(invocationCount = 2)
+    @Test()
     public void createStudentTest() {
         driver.manage().timeouts().implicitlyWait(ofSeconds(getConfiguration().getLong("wait.time")));
 
