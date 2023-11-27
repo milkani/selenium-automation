@@ -42,8 +42,8 @@ public class LocalDriverManager {
         browserOptions.setPlatformName("Windows 11");
         browserOptions.setBrowserVersion("latest");
         Map<String, Object> sauceOptions = new HashMap<>();
-        sauceOptions.put("username", "");
-        sauceOptions.put("accessKey", "");
+        sauceOptions.put("username", "oauth-nikita-367ce");
+        sauceOptions.put("accessKey", "25505575-ff6d-498b-8266-4c49e9e1e87a");
         sauceOptions.put("build", "<your build id>");
         sauceOptions.put("name", "<your test name>");
         browserOptions.setCapability("sauce:options", sauceOptions);
