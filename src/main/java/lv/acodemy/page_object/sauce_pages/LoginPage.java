@@ -5,16 +5,14 @@ import lv.acodemy.utils.LocalDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
 import static org.openqa.selenium.support.How.*;
 
 public class LoginPage {
 
-    private final WebDriver driver = LocalDriverManager.getInstance();
-
     public LoginPage() {
+        WebDriver driver = LocalDriverManager.getInstance();
         PageFactory.initElements(driver, this);
     }
 

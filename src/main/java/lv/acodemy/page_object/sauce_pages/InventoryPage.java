@@ -12,9 +12,8 @@ import java.util.List;
 
 public class InventoryPage {
 
-    private final WebDriver driver = LocalDriverManager.getInstance();
-
     public InventoryPage() {
+        WebDriver driver = LocalDriverManager.getInstance();
         PageFactory.initElements(driver, this);
     }
 

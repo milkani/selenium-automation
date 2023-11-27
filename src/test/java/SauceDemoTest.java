@@ -1,13 +1,11 @@
 import lv.acodemy.page_object.sauce_pages.InventoryPage;
 import lv.acodemy.page_object.sauce_pages.LoginPage;
 import lv.acodemy.utils.LocalDriverManager;
-import lv.acodemy.utils.constants.ErrorMessages;
-import org.assertj.core.api.Assertions;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -19,11 +17,18 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfAllElements;
 
 public class SauceDemoTest {
+    WebDriver driver;
+    LoginPage loginPage;
+    InventoryPage inventoryPage;
+    Wait<WebDriver> wait;
 
-    WebDriver driver = LocalDriverManager.getInstance();
-    LoginPage loginPage = new LoginPage();
-    InventoryPage inventoryPage = new InventoryPage();
-    Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+    @BeforeMethod
+    public void before() {
+        driver = LocalDriverManager.getInstance();
+        loginPage = new LoginPage();
+        inventoryPage = new InventoryPage();
+        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+    }
 
     @Test(description = "Test successful login")
     public void testLogin() {
@@ -58,8 +63,4 @@ public class SauceDemoTest {
     public void after() {
         closeDriver();
     }
-
-
-
-
 }
