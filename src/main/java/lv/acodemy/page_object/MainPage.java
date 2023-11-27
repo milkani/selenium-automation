@@ -2,11 +2,11 @@ package lv.acodemy.page_object;
 
 import lv.acodemy.utils.LocalDriverManager;
 import org.openqa.selenium.By;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.WebDriver;
 
 public class MainPage {
 
-    ChromeDriver driver = LocalDriverManager.getInstance();
+    WebDriver driver = LocalDriverManager.getInstance();
 
     private final By addStudentButton = By.id("addStudentButton");
 

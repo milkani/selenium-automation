@@ -4,6 +4,7 @@ import lv.acodemy.page_object.AddStudentPage;
 import lv.acodemy.page_object.MainPage;
 import lv.acodemy.page_object.Notifications;
 import lv.acodemy.utils.LocalDriverManager;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
@@ -18,7 +19,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @Slf4j
 public class StudentAppTest {
 
-    ChromeDriver driver;
+    WebDriver driver = LocalDriverManager.getInstance();
     Faker fakeData;
     WebDriverWait wait;
     MainPage mainPage;
@@ -40,7 +41,7 @@ public class StudentAppTest {
         driver.manage().timeouts().implicitlyWait(ofSeconds(getConfiguration().getLong("wait.time")));
 
         logger.info("Will open now: " + getConfiguration().getString("app.url"));
-        LocalDriverManager.getInstance().get(getConfiguration().getString("app.url"));
+        driver.get(getConfiguration().getString("app.url"));
 
         mainPage.openAddStudentForm();
 
