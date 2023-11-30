@@ -14,7 +14,7 @@ public class LoginPage {
     public LoginPage() {
         WebDriver driver = LocalDriverManager.getInstance();
         PageFactory.initElements(driver, this);
-    }
+    } 
 
     @FindBy(how = XPATH, xpath = "//input[@data-test='username']")
     WebElement usernameField;
