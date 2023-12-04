@@ -38,7 +38,7 @@ public class SauceDemoTest {
         assertThat(inventoryPage.getInventoryItems()).hasSize(6);
     }
 
-    @Test(description = "Test authorization incorrect password")
+    @Test(description = "Test authorization incorrect password", invocationCount = 2)
     public void testLoginIncorrectCredentials() {
         driver.get(getConfiguration().getString("sauce.demo.url"));
         loginPage.authorize("standard_user", "incorrect_password");

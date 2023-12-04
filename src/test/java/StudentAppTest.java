@@ -19,7 +19,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @Slf4j
 public class StudentAppTest {
 
-    WebDriver driver = LocalDriverManager.getInstance();
+    WebDriver driver;
     Faker fakeData;
     WebDriverWait wait;
     MainPage mainPage;
@@ -36,7 +36,7 @@ public class StudentAppTest {
         notifications = new Notifications(wait);
     }
 
-    @Test()
+    @Test(invocationCount = 2)
     public void createStudentTest() {
         driver.manage().timeouts().implicitlyWait(ofSeconds(getConfiguration().getLong("wait.time")));
 
